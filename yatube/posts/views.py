@@ -1,8 +1,11 @@
+from re import template
 from django.http import HttpResponse
+from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return HttpResponse('Main page')
+    template = 'posts/index.html'
+    return render(request, template)
 
 
 def group(request):
@@ -10,4 +13,4 @@ def group(request):
 
 
 def group_posts(request, slug):
-    return HttpResponse(f'Grroup: {slug}')
+    return HttpResponse(f'Group: {slug}')
